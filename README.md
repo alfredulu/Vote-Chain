@@ -1,6 +1,3 @@
-# Block Vote JS Edition
-
-Welcome to BlockVote! The application where a user can propose a prompt to vote on, then vote for one of two candidates!
 
 This app is meant to demonstrate how to create a full dApp starting from `create-near-app`, and also demonstrate how to implement collections and initiate a JS smart contract using the near-sdk-js!
 
@@ -52,9 +49,9 @@ Each account on NEAR can have at most one contract deployed to it. If you've alr
 
    near login
 
-2. Create a subaccount (replace `YOUR-NAME` below with your actual account name):
-
-   near create-account near-blank-project.YOUR-NAME.testnet --masterAccount YOUR-NAME.testnet
+2. Create a subaccount and fund it with the any amount of near tokens(in this case ten), (replace `YOUR-NAME` below with your actual account name).
+       
+    near create-account near-blank-project.YOUR-NAME.testnet  --masterAccount YOUR-NAME.testnet --intialBalance 10
 
 ## Step 2: deploy the contract
 
@@ -65,9 +62,13 @@ Replace `PATH_TO_WASM_FILE` with the `wasm` that was generated in `contract` bui
 
 ## Step 3: set contract name in your frontend code
 
-Modify the line in `src/config.js` that sets the account name of the contract. Set it to the account id you used above.
+Modify the line in /frontend/index.js that sets the account name of the contract. Set it to the account id you used above.
 
     const CONTRACT_NAME = process.env.CONTRACT_NAME || 'near-blank-project.YOUR-NAME.testnet'
+
+and the line in the /contract/deplo.sh script and set it to the account id you used above
+
+    'near-blank-project.YOUR-NAME.testnet' --wasmFile PATH_TO_WASM_FILE
 
 # Troubleshooting
 
@@ -81,5 +82,3 @@ On Windows, if you're seeing an error containing `EPERM` it may be related to sp
 [near-cli]: https://github.com/near/near-cli
 [gh-pages]: https://github.com/tschaub/gh-pages
 
-# BlockVote-JS-Edition-Tutorial
-# Vote-Chain

@@ -37,15 +37,6 @@ You can automatically compile and deploy the contract in the NEAR testnet by run
 npm run deploy
 ```
 
-Once finished, check the `neardev/dev-account` file to find the address in which the contract was deployed:
-
-```bash
-cat ./neardev/dev-account
-# e.g. dev-1659899566943-21539992274727
-```
-
-<br />
-
 ## 2. Retrieve the Greeting
 
 `get_greeting` is a read-only method (aka `view` method).
